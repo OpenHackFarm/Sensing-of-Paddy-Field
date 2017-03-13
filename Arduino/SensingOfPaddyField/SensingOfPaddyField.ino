@@ -3,6 +3,8 @@
 #include <DallasTemperature.h>
 #include <Wire.h>
 
+#define DEVICE_ID "Paddy"
+
 #define DELAY 60000
 
 #define ONE_WIRE_BUS_1 2
@@ -118,6 +120,8 @@ void loop() {
     read_temp_1();
     read_temp_2();
 
+    Serial.print(DEVICE_ID);
+    Serial.print(",");
     Serial.print(temp_1);
     Serial.print(",");
     Serial.print(temp_2);
@@ -125,6 +129,8 @@ void loop() {
     Serial.print(lastwaterlevel * 2.54);
     Serial.println();
 
+    LoRa.print(DEVICE_ID);
+    LoRa.print(",");
     LoRa.print(temp_1);
     LoRa.print(",");
     LoRa.print(temp_2);
