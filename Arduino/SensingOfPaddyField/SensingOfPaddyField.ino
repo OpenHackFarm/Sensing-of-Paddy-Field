@@ -71,7 +71,13 @@ void read_water_level() {
         Serial.print(waterlevel * 2.54);
         Serial.println("cm");
     }
-    lastwaterlevel=waterlevel;
+
+    if (waterlevel > 0) {
+          lastwaterlevel = waterlevel;
+    } else {
+          lastwaterlevel = 0;
+    }
+
 }
 
 void read_temp_1() {
