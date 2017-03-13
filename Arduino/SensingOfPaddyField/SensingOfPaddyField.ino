@@ -29,6 +29,10 @@ float temp_2 = 0;
 SoftwareSerial LoRa(8, 9); // UNO (RX, TX)
 char val;
 
+/*
+    eTape Liquid Level Sensor Sample Code
+    https://archive.is/oPUEl#selection-107.42-107.49
+*/
 void read_water_level() {
      uint8_t i;
      float average;
